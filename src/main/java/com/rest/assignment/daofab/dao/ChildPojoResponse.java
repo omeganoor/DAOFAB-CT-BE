@@ -14,11 +14,17 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Child {
+public class ChildPojoResponse {
 
-    private long id;
+    private Long id;
 
-    private long parentId;
+    private Long parentId;
 
-    private long amount;
+    private Long paidAmount;
+
+    private String sender;
+
+    private String receiver;
+
+    private Long totalAmount;
 }

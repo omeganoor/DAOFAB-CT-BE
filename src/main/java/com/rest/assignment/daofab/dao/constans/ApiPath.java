@@ -5,4 +5,5 @@ public interface ApiPath {
     String PARENT = BASE_PATH + "/parent";
     String CHILD = BASE_PATH + "/child";
     String ID = "/{id}";
+    String PARENT_ID = "/parent-id"+ID;
 }

@@ -18,12 +18,22 @@ public class PageableHelper {
 
     Integer setSize = maxSizePaginated(size);
 
-    return PageRequest.of(page, setSize, Sort.by(new Order(direction, setSort)));
+    Integer setPage = getMinPage(page);
+
+    return PageRequest.of(setPage, setSize, Sort.by(new Order(direction, setSort)));
   }
+
+  private static Integer getMinPage(Integer page) {
+    if (page == null){
+      return 0;
+    }
+    return page;
+  }
+
 
   public static Integer maxSizePaginated(Integer size) {
     Integer newSize = size;
-    if (size > 1000) {
+    if (size == null || size > 1000) {
       newSize = 1000;
     }
     return newSize;
