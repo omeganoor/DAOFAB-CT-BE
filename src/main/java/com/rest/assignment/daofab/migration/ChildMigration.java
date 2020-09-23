@@ -23,7 +23,7 @@ public class ChildMigration {
         JSONParser parser = new JSONParser();
 
         try {
-            Object obj = parser.parse(new FileReader("src\\main\\resources\\json\\Child.json"));
+            Object obj = parser.parse(new FileReader("Child.json"));
 
             JSONObject jsonObject = (JSONObject) obj;
             JSONArray data = (JSONArray) jsonObject.get("data");
